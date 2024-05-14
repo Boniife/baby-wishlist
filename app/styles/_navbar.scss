@@ -1,0 +1,25 @@
+
+.navbar {
+    @apply relative;
+    &_wrap {
+        @apply absolute top-0 right-0 w-full px-4 py-2;
+        .wrapper {
+            @apply flex justify-between items-center;
+            &_img-wrap {
+                @apply ml-4
+            }
+            &_text-wrap {
+                @apply flex space-x-4 mr-16 text-white;
+                font-size: clamp(10px, 3vw, 12px);
+                .list1 {
+                    @apply px-4 p-2 rounded-md;
+                    background-color: #1C8298;
+                }
+                .list2 {
+                    @apply px-4 py-2 rounded-md;
+                    background-color: #FF47C1;
+                }
+            }
+        }
+    }
+}

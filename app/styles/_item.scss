@@ -1,0 +1,25 @@
+.item {
+    @apply w-fit h-fit bg-white rounded-lg shadow-xl;
+    &_wrap {
+        .item-img {
+            @apply w-full h-full;
+            img {
+                @apply w-[362px] h-[200px] rounded-lg
+            }
+        }
+        .item-txt {
+            @apply p-3;
+            h2 {
+                @apply text-lg
+            }
+            h4 {
+                @apply text-sm
+            }
+        }
+        button {
+            @apply h-[40px] w-full mb-3 text-center text-white rounded-lg;
+            background: linear-gradient(to right, #69ABE8, #E25EBD);
+            color: white; 
+        }
+    }
+}

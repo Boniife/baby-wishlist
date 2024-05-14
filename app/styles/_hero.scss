@@ -1,0 +1,29 @@
+.hero {
+    @apply h-full;
+    img {
+        @apply max-h-[600px]
+    }
+    &_txt {
+        @apply absolute top-[283px] left-[409px] w-[462px] h-[200px] rounded-md text-white;
+        background-color: #716464;
+        p {
+            @apply w-full h-[36px] font-normal mt-3 text-center px-6 text-sm italic;
+            line-height: 22px;
+            size: 12px;
+        }
+        h1 {
+            @apply w-full h-[35px] font-normal text-center  mt-8 text-3xl;
+            line-height: 32px;
+            size: 32px;
+        }
+    }
+}
+.gradient_text {
+    background: linear-gradient(to right, #FFFFFF, #5EDAF5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.gradient {
+    color: rgba(158, 238, 255, 0.7);
+}

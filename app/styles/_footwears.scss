@@ -1,0 +1,20 @@
+.footwear{
+    @apply w-full h-fit mt-6;
+    background: linear-gradient(to right, #FFFFFF, #F8B2E4);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 20px;
+    &_head {
+        @apply text-center text-2xl;
+        h1 {
+        background: linear-gradient(to right, #CE6CC5, #7C9FE1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;       
+     }
+    }
+    &_body {
+        @apply mt-8 pl-[4%] grid grid-cols-3 space-y-5;
+    }
+}
