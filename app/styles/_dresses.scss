@@ -15,6 +15,12 @@
      }
     }
     &_body {
-        @apply mt-8 pl-[4%] grid grid-cols-3 space-y-5;
+        @apply mt-8 pl-[3%] grid grid-cols-3 space-y-5;
+        @media only screen and (max-width: 1199px) {
+            @apply grid grid-cols-2;
+        }
+        @media only screen and (max-width: 817px) {
+            @apply flex flex-col items-center;
+        }
     }
 }

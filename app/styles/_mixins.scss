@@ -1,0 +1,38 @@
+@mixin breakpoint($point) {
+    @if $point == desktop {
+      @media only screen and (min-width: 1200px) {
+        @content;
+      }
+    }
+    @if $point == tablet {
+      @media only screen and (max-width: 1199px) {
+        @content;
+      }
+    }
+    @if $point == tablet-md {
+      @media only screen and (max-width: 929px) {
+        @content;
+      }
+    }
+    @if $point == tablet-sm {
+      @media only screen and (max-width: 768px) {
+        @content;
+      }
+    }
+    @if $point == mobile-lg {
+      @media only screen and (max-width: 581px) {
+        @content;
+      }
+    }
+    @if $point == mobile-medium {
+      @media only screen and (max-width: 375px) {
+        @content;
+      }
+    }
+    @if $point == mobile-small {
+      @media only screen and (max-width: 320px) {
+        @content;
+      }
+    }
+  }
+  

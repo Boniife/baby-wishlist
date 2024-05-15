@@ -1,10 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FiArrowUp } from 'react-icons/fi'; 
+import { FiArrowUp, FiShoppingCart } from 'react-icons/fi';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const [showCart, setShowCart] = useState(false); 
 
   const scrollToSection = (sectionId: any) => {
     const section = document.getElementById(sectionId);
@@ -53,9 +55,15 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* Cart icon */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <Link href="/cart"> 
+            <FiShoppingCart className="bg-pink-400 p-1 rounded-full text-4xl hover:bg-gray-600 cursor-pointer" />
+        </Link>
+      </div>
       {showScroll && (
-        <div className="fixed bottom-4 right-4 z-50">
-          <button onClick={scrollTop} className="bg-pink-400 p-2 rounded-full text-white hover:bg-gray-600">
+        <div className="fixed bottom-16 right-4 z-50">
+          <button onClick={scrollTop} className="bg-pink-400 p-2 rounded-full text-white hover:bg-gray-600 cursor-pointer">
             <FiArrowUp />
           </button>
         </div>
@@ -65,3 +73,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

@@ -15,7 +15,6 @@ const Footwears = () => {
            key={item.id}
            img={item.img}
            name={item.name}
-           quantity={item.quantity}
           />
         ))}
       </div>
