@@ -16,6 +16,9 @@
           @media only screen and (max-width: 768px) {
             @apply absolute top-[20%] left-[10%] w-[80%] h-[25%] rounded-md text-white;
           }
+          @media only screen and (max-width: 580px) {
+            @apply hidden
+          }
         p {
             @apply w-full h-[20%] font-normal mt-3 text-center px-6 text-sm italic;
             line-height: 1.5;
