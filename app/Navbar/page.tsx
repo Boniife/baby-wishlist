@@ -101,11 +101,11 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="fixed bottom-4 right-4 z-50">
+      {/* <div className="fixed bottom-4 right-4 z-50">
         <Link href="/cart"> 
             <FiShoppingCart className="bg-pink-400 p-1 rounded-full text-4xl hover:bg-gray-600 cursor-pointer" />
         </Link>
-      </div>
+      </div> */}
       {showScroll && (
         <div className="fixed bottom-16 right-4 z-50">
           <button onClick={scrollTop} className="bg-pink-400 p-2 rounded-full text-white hover:bg-gray-600 cursor-pointer">
