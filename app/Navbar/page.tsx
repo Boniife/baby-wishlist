@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { FiArrowUp, FiShoppingCart } from 'react-icons/fi';
-import Link from 'next/link';
+import "../styles/main.scss";
 
 const Navbar = () => {
   const [showScroll, setShowScroll] = useState(false);

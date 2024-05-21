@@ -1,9 +1,12 @@
 import React from 'react'
+import Cart from './Cart'
 
-const Cart = () => {
+const page = () => {
   return (
-    <div>Cart</div>
+    <>
+    <Cart />
+    </>
   )
 }
 
-export default Cart
+export default page

@@ -2,7 +2,7 @@ import React from 'react'
 import { FOOTWEAR_ITEMS } from './constants'
 import Item from '../ItemCard/Item'
 
-const Footwears = ({ updateTotalQuantity }: any) => {
+const Footwears = ({ updateTotalQuantity }: { updateTotalQuantity: (quantity: number, item: { img: string; name: string; estimate: number; quantity: number }) => void }) => {
   return (
     <div id='footwears-section' className='footwear'>
         <div className='footwear_head'> 

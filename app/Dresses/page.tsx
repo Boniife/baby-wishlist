@@ -2,15 +2,14 @@ import React from 'react';
 import Item from '../ItemCard/Item';
 import { DRESS_ITEMS } from './constant';
 
-const Dresses = ({ updateTotalQuantity }: any) => {
+const Dresses = ({ updateTotalQuantity }: { updateTotalQuantity: (quantity: number, item: { img: string; name: string; estimate: number; quantity: number }) => void }) => {
   return (
     <div id="dresses-section" className='dress'>
       <div className='dress_head'> 
         <h1> Dresses </h1>
       </div>
-
       <div className='dress_body'>
-        {DRESS_ITEMS.map((item)=> (
+        {DRESS_ITEMS.map((item) => (
           <Item 
             key={item.id}
             img={item.img}

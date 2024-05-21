@@ -1,0 +1,16 @@
+.layout-head {
+    @apply text-center font-extrabold text-lg px-5;
+    background: linear-gradient(to right, #CE6CC5, #7C9FE1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+.layout-bg {
+    @apply w-full h-[100vh];
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(94, 218, 245, 0.8));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 0px;
+    background-size: 100% 100%;
+}

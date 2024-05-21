@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "./Navbar/page";
-import Footer from "./Footer/page";
-import { cn } from "./lib/utils";
-import "./styles/main.scss"
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './styles/main.scss';
+import Navbar from './Navbar/page';
+import { cn } from './lib/utils';
+import Wrap from './Wrap';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Baby Wishlist",
-  description: "Baby list",
+  title: 'Baby Anyanwu',
+  description: 'Baby Anyanwu Wish-list',
 };
 
 export default function RootLayout({
@@ -19,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className)}>
+        <Wrap>
         <Navbar />
-        {children}
-        <Footer />
+          {children}
+        </Wrap>
       </body>
     </html>
   );
