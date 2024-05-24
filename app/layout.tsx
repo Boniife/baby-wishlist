@@ -17,14 +17,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={cn(inter.className)}>
-        <Wrap>
-        <Navbar />
-          {children}
-        </Wrap>
-      </body>
-    </html>
-  );
+  const headers = new Headers();
+  if (typeof window === 'undefined') {
+    const headersFromRequest = headers; 
+    const showNavbar = headersFromRequest.get('x-show-navbar') === 'true';
+
+    return (
+      <html lang="en">
+        <body className={cn(inter.className)}>
+          <Wrap>
+            {showNavbar && <Navbar />}
+            {children}
+          </Wrap>
+        </body>
+      </html>
+    );
+  } else {
+    return (
+      <html lang="en">
+        <body className={cn(inter.className)}>
+          <Wrap>
+            <Navbar />
+            {children}
+          </Wrap>
+        </body>
+      </html>
+    );
+  }
 }

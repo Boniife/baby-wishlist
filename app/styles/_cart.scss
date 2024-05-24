@@ -6,11 +6,64 @@
     color: transparent; 
 }
 .layout-bg {
-    @apply w-full h-[100vh];
+    @apply w-full h-full;
     background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(94, 218, 245, 0.8));
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: bottom;
     padding: 0px;
     background-size: 100% 100%;
+}
+
+.cart {
+    @apply flex flex-col items-center min-h-[100vh];
+    &_body {
+        @apply mt-10 flex flex-col items-center space-y-5;
+        // @media only screen and (max-width: 450px) {
+        //     @apply ;
+        //   }
+    }
+    button {
+        @apply bg-pink-300 shadow-2xl py-4 px-8 mt-8 w-fit text-xl font-extrabold text-white rounded-lg mb-7;
+    }
+}
+
+.cart-item {
+    @apply flex bg-white p-4 w-fit rounded-lg shadow-2xl;
+
+    &_imgwrap {
+        @apply h-[62px];
+        img {
+            @apply rounded-lg max-h-[62px];
+        }
+    }
+
+    &_props {
+        @apply ml-7 text-pink-400 font-extrabold;
+         @media only screen and (max-width: 450px) {
+             @apply mx-4;
+           }
+        .title {
+            @apply flex;
+        }
+        .control {
+            @apply flex mt-3;
+            &_button {
+                @apply bg-pink-300 px-[0.45rem] rounded-sm text-white text-xl cursor-pointer;
+                @media only screen and (max-width: 450px) {
+                    @apply text-sm;
+                  }
+            }
+            .qty {
+                @apply text-xl text-zinc-400 mx-5;
+            }
+        }
+    }
+
+    &_del {
+        @apply text-xl text-zinc-500 ml-7 font-extrabold cursor-pointer;
+        @media only screen and (max-width: 450px) {
+            @apply text-sm ml-3 font-semibold;
+          }
+    }
 }

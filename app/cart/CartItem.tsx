@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addItemToCart, removeItemFromCart } from '../slices/cartSlice';
@@ -15,14 +15,20 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const dispatch = useDispatch();
+  const [currentEstimate, setCurrentEstimate] = useState<number>(item.estimate);
+  const incrementAmount = item.estimate; // Use the initial estimate as the increment amount
 
   const handleIncrement = () => {
-    dispatch(addItemToCart({ quantity: 1, item }));
+    const newEstimate = currentEstimate + incrementAmount;
+    setCurrentEstimate(newEstimate);
+    dispatch(addItemToCart({ quantity: 1, item: { ...item, estimate: newEstimate } }));
   };
 
   const handleDecrement = () => {
-    if (item.quantity > 1) {
-      dispatch(addItemToCart({ quantity: -1, item }));
+    if (currentEstimate > item.estimate) {
+      const newEstimate = currentEstimate - incrementAmount;
+      setCurrentEstimate(newEstimate);
+      dispatch(addItemToCart({ quantity: -1, item: { ...item, estimate: newEstimate } }));
     }
   };
 
@@ -31,29 +37,29 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
   };
 
   return (
-    <div className='flex bg-white p-4 w-fit rounded-lg shadow-2xl'>
-      <div className='h-[62px]'>
+    <div className='cart-item'>
+      <div className='cart-item_imgwrap'>
         <Image 
           src={item.img}
           alt={item.name}
           width={82}
           height={82}
-          className='rounded-lg max-h-[62px]'
+          className=''
         />
       </div>
-      <div className='ml-7 text-pink-400 font-extrabold'>
-        <div className='flex'>
+      <div className='cart-item_props'>
+        <div className='title'>
             <p className=''>{item.name}</p>
-            <p className='ml-7'>₦{item.estimate}</p>
+            <p className='ml-7'>₦{currentEstimate}</p>
         </div>
-        <div className='flex mt-3'>
-            <p className='bg-pink-300 px-[0.45rem] rounded-sm text-white text-xl cursor-pointer' onClick={handleDecrement}>-</p>
-            <p className='text-xl text-zinc-400 mx-5'>{item.quantity} qty</p>
-            <p className='bg-pink-300 px-[0.45rem] rounded-sm text-white text-xl cursor-pointer' onClick={handleIncrement}>+</p>
+        <div className='control'>
+            <p className='control_button' onClick={handleDecrement}>-</p>
+            <p className='qty'>{item.quantity} qty</p>
+            <p className='control_button' onClick={handleIncrement}>+</p>
         </div>
       </div>
-      <div className='text-xl text-zinc-500 ml-7 font-extrabold cursor-pointer' onClick={handleDelete}>
-        <p className='flex'> <FaTrash /> <span className='ml-1'>delete</span> </p>
+      <div className='cart-item_del' onClick={handleDelete}>
+        <p className='flex'> <FaTrash /> <span className='ml-1 hidden md:flex'>delete</span> </p>
       </div>
     </div>
   );
