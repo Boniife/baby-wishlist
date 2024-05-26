@@ -1,20 +1,20 @@
 export const ACCESSORIES_ITEMS = [
     {
-        id: 'Gown',
+        id: 'Cradle',
         img: '/images/cradle.jpg',
-        name: 'Gown',
+        name: 'Cradle',
         estimate: 2000
     },
     {
-        id: 'Hats',
+        id: 'Bed',
         img: '/images/bed.jpg',
-        name: 'Hats',
+        name: 'Bed',
         estimate: 2000
     },
     {
-        id: 'Bodysuits',
+        id: 'Feeders',
         img: '/images/feeding bottles.jpg',
-        name: 'Bodysuits',
+        name: 'Feeders',
         estimate: 2000
     },
     {
@@ -24,15 +24,15 @@ export const ACCESSORIES_ITEMS = [
         estimate: 2000
     },
     {
-        id: 'Pants',
+        id: 'sucker',
         img: '/images/pacifier.jpg',
-        name: 'Pants',
+        name: 'sucker',
         estimate: 2000
     },
     {
-        id: 'Socks',
+        id: 'Carrier',
         img: '/images/carrier.jpg',
-        name: 'Socks',
+        name: 'Carrier',
         estimate: 2000
     },
 ]
