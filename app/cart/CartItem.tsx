@@ -10,13 +10,14 @@ interface CartItemProps {
     name: string;
     estimate: number;
     quantity: number;
+    addedToCart: boolean;
   };
 }
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const dispatch = useDispatch();
   const [currentEstimate, setCurrentEstimate] = useState<number>(item.estimate);
-  const incrementAmount = item.estimate; // Use the initial estimate as the increment amount
+  const incrementAmount = item.estimate; 
 
   const handleIncrement = () => {
     const newEstimate = currentEstimate + incrementAmount;

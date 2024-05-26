@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../ItemCard/Item';
 import { DRESS_ITEMS } from './constant';
 
-const Dresses = ({ updateTotalQuantity }: { updateTotalQuantity: (quantity: number, item: { img: string; name: string; estimate: number; quantity: number }) => void }) => {
+const Dresses = () => {
   return (
     <div id="dresses-section" className='dress'>
       <div className='dress_head'> 
@@ -15,7 +15,6 @@ const Dresses = ({ updateTotalQuantity }: { updateTotalQuantity: (quantity: numb
             img={item.img}
             name={item.name}
             estimate={item.estimate}
-            updateTotalQuantity={updateTotalQuantity}
           />
         ))}
       </div>

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartItem {
@@ -6,6 +6,7 @@ interface CartItem {
   name: string;
   estimate: number;
   quantity: number;
+  addedToCart: boolean;
 }
 
 interface CartState {
@@ -26,22 +27,17 @@ const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity += quantity;
       } else {
-        state.cartItems.push({ ...item, quantity });
+        state.cartItems.push({ ...item, quantity, addedToCart: true }); // Set addedToCart to true
       }
     },
     removeItemFromCart: (state, action: PayloadAction<string>) => {
       state.cartItems = state.cartItems.filter(cartItem => cartItem.name !== action.payload);
     },
-    increaseQuantity: (state, action: PayloadAction<string>) => {
-      const item = state.cartItems.find(cartItem => cartItem.name === action.payload);
+    updateItemQuantity: (state, action: PayloadAction<{ name: string, quantity: number }>) => {
+      const { name, quantity } = action.payload;
+      const item = state.cartItems.find(cartItem => cartItem.name === name);
       if (item) {
-        item.quantity += 1;
-      }
-    },
-    decreaseQuantity: (state, action: PayloadAction<string>) => {
-      const item = state.cartItems.find(cartItem => cartItem.name === action.payload);
-      if (item && item.quantity > 1) {
-        item.quantity -= 1;
+        item.quantity = quantity;
       }
     },
     clearCart: (state) => {
@@ -50,5 +46,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart, increaseQuantity, decreaseQuantity, clearCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, updateItemQuantity, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

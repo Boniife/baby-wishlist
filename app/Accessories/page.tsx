@@ -1,27 +1,26 @@
-import React from 'react'
-import Item from '../ItemCard/Item'
-import { ACCESSORIES_ITEMS } from './constant'
+import React from 'react';
+import Item from '../ItemCard/Item';
+import { ACCESSORIES_ITEMS } from './constant';
 
-const Accessories = ({ updateTotalQuantity }: { updateTotalQuantity: (quantity: number, item: { img: string; name: string; estimate: number; quantity: number }) => void }) => {
+const Accessories = () => {
   return (
     <div id='accessories-section' className='dress'>
-        <div className='dress_head'> 
+      <div className='dress_head'> 
         <h1> Accessories </h1>
       </div>
 
       <div className='dress_body'>
         {ACCESSORIES_ITEMS.map((item)=> (
           <Item 
-           key={item.id}
-           img={item.img}
-           name={item.name}
-           estimate={item.estimate}
-           updateTotalQuantity={updateTotalQuantity}
+            key={item.id}
+            img={item.img}
+            name={item.name}
+            estimate={item.estimate}
           />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Accessories
+export default Accessories;

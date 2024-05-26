@@ -1,21 +1,30 @@
-'use client';
-import Image from 'next/image';
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import { addItemToCart, updateItemQuantity } from '../slices/cartSlice';
+import Image from 'next/image';
 
 interface ItemProps {
   img: string;
   name: string;
   estimate: number;
-  updateTotalQuantity: (quantity: number, item: { img: string; name: string; estimate: number; quantity: number }) => void;
 }
 
-const Item: React.FC<ItemProps> = ({ img, name, estimate, updateTotalQuantity }: ItemProps) => {
-  const [quantityNeeded, setQuantityNeeded] = useState<number>(0);
+const Item: React.FC<ItemProps> = ({ img, name, estimate }) => {
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state: RootState) =>
+    state.cart.cartItems.find(item => item.name === name)
+  );
+
+  const quantityNeeded = cartItem ? cartItem.quantity : 0;
+  const addedToCart = cartItem ? cartItem.addedToCart : false;
 
   const handlePick = () => {
-    const newQuantity = quantityNeeded + 1;
-    setQuantityNeeded(newQuantity);
-    updateTotalQuantity(1, { img, name, estimate, quantity: newQuantity });
+    if (!addedToCart) {
+      const newQuantity = quantityNeeded + 1;
+      dispatch(updateItemQuantity({ name, quantity: newQuantity }));
+      dispatch(addItemToCart({ quantity: 1, item: { img, name, estimate, quantity: newQuantity, addedToCart: true } }));
+    }
   };
 
   return (
@@ -31,10 +40,16 @@ const Item: React.FC<ItemProps> = ({ img, name, estimate, updateTotalQuantity }:
         </div>
         <div className='item-txt'>
           <h2 style={{ color: '#FF47C1' }}>{name}</h2>
-          <h4 style={{ color: '#FF47C1' }}>Quantity Needed: {quantityNeeded}</h4>
-          <h4 style={{ color: '#FF47C1' }}>Estimated Price: ₦{estimate} </h4>
+          {addedToCart ? (
+            <p style={{ color: 'green' }}>Item added to cart</p>
+          ) : (
+            <>
+              <h4 style={{ color: '#FF47C1' }}>Quantity Needed: {quantityNeeded}</h4>
+              <h4 style={{ color: '#FF47C1' }}>Estimated Price: ₦{estimate} </h4>
+            </>
+          )}
         </div>
-        <button className='' onClick={handlePick}>Pick</button>
+        {!addedToCart && <button className='' onClick={handlePick}>ADD</button>}
       </div>
     </div>
   );

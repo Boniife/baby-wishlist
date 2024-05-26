@@ -1,15 +1,18 @@
-'use client'
-import React from 'react'
-import { Provider } from 'react-redux'
-import { store } from './store/store'
-import Navbar from './Navbar/page'
+'use client';
 
-const Wrap = ({children}:any) => {
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store, persistor } from './store/store';
+import { PersistGate } from 'redux-persist/integration/react';
+
+const Wrap = ({ children }: any) => {
   return (
     <Provider store={store}>
-          {children}
-        </Provider>
-  )
-}
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
+    </Provider>
+  );
+};
 
-export default Wrap
+export default Wrap;
