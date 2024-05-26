@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Item from '../ItemCard/Item';
 import { ACCESSORIES_ITEMS } from './constant';

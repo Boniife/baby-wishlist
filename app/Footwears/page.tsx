@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { FOOTWEAR_ITEMS } from './constants';
 import Item from '../ItemCard/Item';

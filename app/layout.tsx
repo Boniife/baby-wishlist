@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './styles/main.scss';
-import Navbar from './Navbar/page';
 import { cn } from './lib/utils';
 import Wrap from './Wrap';
 
