@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import { addItemToCart, updateItemQuantity } from '../slices/cartSlice';
 import Image from 'next/image';
+import { addItemToCart, updateItemQuantity } from '../slices/cartSlice';
 
 interface ItemProps {
   img: string;

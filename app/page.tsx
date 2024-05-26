@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Hero from './Hero/page';
 import Dresses from './Dresses/page';
 import Footwears from './Footwears/page';
@@ -9,11 +9,10 @@ import Toys from './Toys/page';
 import { FiShoppingCart } from 'react-icons/fi';
 import Link from 'next/link';
 import { RootState } from './store/store';
-import { addItemToCart, updateItemQuantity } from './slices/cartSlice';
 import Navbar from './Navbar/page';
 
 const ShoppingPage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const totalQuantityPicked = cartItems.reduce((total, item) => total + item.quantity, 0);
 
