@@ -58,9 +58,10 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             <p className='qty'>{item.quantity} qty</p>
             <p className='control_button' onClick={handleIncrement}>+</p>
         </div>
+            <button className='bg-yellow-600 p-3 rounded-md mt-3 text-white'>Buy on Jumia</button>
       </div>
       <div className='cart-item_del' onClick={handleDelete}>
-        <p className='flex'> <FaTrash /> <span className='ml-1 hidden md:flex'>delete</span> </p>
+        <p className='flex'> <FaTrash /> <span className='ml-1 hidden md:flex'>remove</span> </p>
       </div>
     </div>
   );

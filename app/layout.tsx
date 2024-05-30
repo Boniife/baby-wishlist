@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './styles/main.scss';
 import { cn } from './lib/utils';
 import Wrap from './Wrap';
+import Footer from './Footer/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <body className={cn(inter.className)}>
           <Wrap>
             {children}
+            <Footer />
           </Wrap>
         </body>
       </html>
