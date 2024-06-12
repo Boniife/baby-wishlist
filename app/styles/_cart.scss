@@ -6,8 +6,18 @@
     color: transparent; 
 }
 .layout-bg {
-    @apply w-full h-full;
+    @apply h-full w-full rounded-lg my-10 shadow-2xl;
     background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(94, 218, 245, 0.8));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 0px;
+    background-size: 100% 100%;
+}
+
+.layout-ot {
+    @apply h-full w-full rounded-lg shadow-2xl text-center;
+    background: linear-gradient(to right, #FFFFFF, #F8B2E4);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: bottom;

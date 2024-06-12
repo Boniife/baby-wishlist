@@ -65,154 +65,159 @@ const Cart: React.FC = () => {
   }
 
   return (
-    <div className="layout-bg cart">
+    <div className="cart bg-gray-200">
       <div className="layout-head mt-10">
         items in Cart({cartItems.length})
       </div>
       <div className=''>
-        <h3 className='mt-5 text-gray-500 font-bold'>
-          <span className='text-black font-extrabold'>NOTE:- </span>
+        <h3 className='mt-5 text-black font-bold'>
+          <span className=' font-extrabold'>NOTE:- </span>
           You Can Click on the Jumia Button On Each item if you which to purchase any of the item from Jumia, and send it to our address provided below
         </h3>
       </div>
+
+      <div className='layout-ot'>
       <div className="cart_body">
         {cartItems.map((item, index) => (
           <CartItem key={index} item={item} />
         ))}
       </div>
-      <h1 className='mt-3 font-bold'>Total: ₦{calculateTotalPrice()}</h1>
-      
-      <div className='layout-head mt-5 font-extrabold'>
-        <h1 className=''>Payment Method</h1>
+      <h1 className='mt-3 font-bold mb-5'>Total: ₦{calculateTotalPrice()}</h1>
       </div>
 
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        YOU CAN MAKE A TRANSFER OF <span className='text-black'>{calculateTotalPrice()} </span>to <span className='text-black'>opay 8105080543 </span>
-      </h1>
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        You could Get the items from your local store and send it to our address below
-      </h1>
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        You Can Click on the Jumia Button On Each item if you which to purchase any of the item from Jumia, and send it to our address provided below
-      </h1>
+      <div className='layout-bg text-center'>
+        <div className='layout-head mt-5 font-extrabold'>
+          <h1 className=''>Payment Method</h1>
+        </div>
 
-      <div className='layout-head mt-5 font-extrabold'>
-        <h1 className=''>Contact Details</h1>
-      </div>
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        Bank Account: Bank Of Nigeria
-      </h1>
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        House Address: Lagos Nigeria
-      </h1>
-      <h1 className='mt-5 text-gray-500 font-extrabold'>
-        Mobile Number: 07030703156
-      </h1>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          YOU CAN MAKE A TRANSFER OF <span className='text-black'>{calculateTotalPrice()} </span>to <span className='text-black'>opay 8105080543 </span>
+        </h1>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          You could Get the items from your local store and send it to our address below
+        </h1>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          You Can Click on the Jumia Button On Each item if you which to purchase any of the item from Jumia, and send it to our address provided below
+        </h1>
 
-      <div className='my-7'>
-        <p className='layout-head'>
-          If you got us a gift can you please fill the form below so we can Thank you
-        </p>
-        <form onSubmit={handleSubmit} className="mt-5 space-y-4">
-          <div>
-            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name *</label>
-            <input
-              type="text"
-              name="fullName"
-              id="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number *</label>
-            <input
-              type="tel"
-              name="phoneNumber"
-              id="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="date" className="block text-sm font-medium text-gray-700">Date Purchased *</label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              value={formData.date}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Payment Method *</label>
-            <div className="mt-2 space-y-2">
-              <div>
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="bankTransfer"
-                  id="bankTransfer"
-                  checked={formData.paymentMethod === 'bankTransfer'}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                <label htmlFor="bankTransfer" className="text-sm text-gray-700">Bank Transfer</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="boughtOnJumia"
-                  id="boughtOnJumia"
-                  checked={formData.paymentMethod === 'boughtOnJumia'}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                <label htmlFor="boughtOnJumia" className="text-sm text-gray-700">Bought on Jumia</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="sentToAddress"
-                  id="sentToAddress"
-                  checked={formData.paymentMethod === 'sentToAddress'}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                <label htmlFor="sentToAddress" className="text-sm text-gray-700">Sent to Address</label>
+        <div className='layout-head mt-5 font-extrabold'>
+          <h1 className=''>Contact Details</h1>
+        </div>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          Bank Account: Bank Of Nigeria
+        </h1>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          House Address: Lagos Nigeria
+        </h1>
+        <h1 className='mt-5 text-gray-500 font-extrabold'>
+          Mobile Number: 07030703156
+        </h1>
+
+        <div className='my-7'>
+          <p className='layout-head'>
+            If you got us a gift can you please fill the form below so we can Thank you
+          </p>
+          <form onSubmit={handleSubmit} className="mt-5 space-y-4">
+            <div>
+              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name *</label>
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className="mt-1 block w-full px-[1%] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 block w-full px-[1%] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number *</label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                id="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className="mt-1 block w-full px-[1%] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="date" className="block text-sm font-medium text-gray-700">Date Purchased *</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="mt-1 block w-full px-[30%] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Payment Method *</label>
+              <div className="mt-2 space-y-2">
+                <div>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="bankTransfer"
+                    id="bankTransfer"
+                    checked={formData.paymentMethod === 'bankTransfer'}
+                    onChange={handleChange}
+                    className="mr-2"
+                  />
+                  <label htmlFor="bankTransfer" className="text-sm text-gray-700">Bank Transfer</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="boughtOnJumia"
+                    id="boughtOnJumia"
+                    checked={formData.paymentMethod === 'boughtOnJumia'}
+                    onChange={handleChange}
+                    className="mr-2"
+                  />
+                  <label htmlFor="boughtOnJumia" className="text-sm text-gray-700">Bought on Jumia</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="sentToAddress"
+                    id="sentToAddress"
+                    checked={formData.paymentMethod === 'sentToAddress'}
+                    onChange={handleChange}
+                    className="mr-2"
+                  />
+                  <label htmlFor="sentToAddress" className="text-sm text-gray-700">Sent to Address</label>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+            <div>
+              <button
+                type="submit"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        </div>
     </div>
   );
 }

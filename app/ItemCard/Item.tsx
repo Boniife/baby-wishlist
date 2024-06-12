@@ -8,7 +8,7 @@ interface ItemProps {
   img: string;
   name: string;
   estimate: number;
-  link: string; // Add link property
+  link: string;
 }
 
 const Item: React.FC<ItemProps> = ({ img, name, estimate, link }) => {

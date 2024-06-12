@@ -1,4 +1,3 @@
-
 .navbar {
     @apply relative;
     &_wrap {
@@ -6,7 +5,7 @@
         .wrapper {
             @apply flex justify-between items-center;
             &_img-wrap {
-                @apply ml-4
+                @apply ml-4;
             }
             &_text-wrap {
                 @apply flex space-x-4 mr-16 text-white;
@@ -23,34 +22,40 @@
         }
     }
 }
+
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px; 
+    width: 200px;
     height: 100%;
     background-color: #fff;
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    transform: translateX(100%); 
+    transform: translateX(100%);
     z-index: 1;
-  }
-  
-  .sidebar.active {
-    @apply bg-gray-400 py-4 px-2 space-y-4 font-bold text-black;
+}
+
+.sidebar.active {
+    @apply bg-gray-200 py-4 px-2 space-y-4 font-bold text-black text-xs;
     transform: translateX(0);
-  }
-  
-  .mobile-header {
+}
+
+.mobile-header {
     @apply text-2xl;
     position: relative;
-  }
-  
-  .toggle-icon {
+}
+
+.toggle-icon {
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
     cursor: pointer;
     z-index: 2; /* Ensure the icon stays above the sidebar */
-  }
+}
+
+.toggle-icon.fixed {
+    @apply bg-gray-800 text-white rounded-full;
+    z-index: 2;
+}

@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const scrollToSection: any = (sectionId: any) => {
+  const scrollToSection = (sectionId: any) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className='navbar_wrap'>
           {isMobile && (
       <div className="mobile-header text-white">
-        <div className="toggle-icon" onClick={toggleSidebar}>
+        <div className={`toggle-icon ${showSidebar ? 'fixed' : ''}`} onClick={toggleSidebar}>
           {showSidebar ? <FaTimes /> : <FaBars />}
         </div>
         <Image 
@@ -76,7 +76,7 @@ const Navbar = () => {
           <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p>
           <p className='list2' onClick={() => scrollToSection('footwears-section')}>Footwears</p>
           <p className='list1' onClick={() => scrollToSection('accessories-section')}>Accessories</p>
-          <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p>
+          {/* <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p> */}
         </div>
       </div>
     )}
@@ -96,7 +96,7 @@ const Navbar = () => {
               <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p>
               <p className='list2' onClick={() => scrollToSection('footwears-section')}>Footwears</p>
               <p className='list1' onClick={() => scrollToSection('accessories-section')}>Accessories</p>
-              <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p>
+              {/* <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p> */}
             </div>
           </div>
         )}
@@ -118,6 +118,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-

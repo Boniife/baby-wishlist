@@ -30,7 +30,7 @@ const ShoppingPage = () => {
         <Dresses  />
         <Footwears  />
         <Accessories  />
-        <Toys  />
+        {/* <Toys  /> */}
       </div>
       <div className="fixed bottom-4 right-4 z-50">
         <Link href="/cart">
