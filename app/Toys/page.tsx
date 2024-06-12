@@ -18,6 +18,7 @@ const Toys = () => {
               img={item.img}
               name={item.name}
               estimate={item.estimate}
+              link={item.link}
             />
           ))}
         </div>

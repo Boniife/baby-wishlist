@@ -6,6 +6,7 @@ interface CartItem {
   estimate: number;
   quantity: number;
   addedToCart: boolean;
+  link: string;
 }
 
 interface CartState {

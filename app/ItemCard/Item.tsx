@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import Image from 'next/image';
@@ -8,9 +8,10 @@ interface ItemProps {
   img: string;
   name: string;
   estimate: number;
+  link: string; // Add link property
 }
 
-const Item: React.FC<ItemProps> = ({ img, name, estimate }) => {
+const Item: React.FC<ItemProps> = ({ img, name, estimate, link }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector((state: RootState) =>
     state.cart.cartItems.find(item => item.name === name)
@@ -23,7 +24,7 @@ const Item: React.FC<ItemProps> = ({ img, name, estimate }) => {
     if (!addedToCart) {
       const newQuantity = quantityNeeded + 1;
       dispatch(updateItemQuantity({ name, quantity: newQuantity }));
-      dispatch(addItemToCart({ quantity: 1, item: { img, name, estimate, quantity: newQuantity, addedToCart: true } }));
+      dispatch(addItemToCart({ quantity: 1, item: { img, name, estimate, quantity: newQuantity, addedToCart: true, link } }));
     }
   };
 

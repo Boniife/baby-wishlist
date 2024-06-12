@@ -11,6 +11,7 @@ interface CartItemProps {
     estimate: number;
     quantity: number;
     addedToCart: boolean;
+    link: string;
   };
 }
 
@@ -50,15 +51,19 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
       </div>
       <div className='cart-item_props'>
         <div className='title'>
-            <p className=''>{item.name}</p>
-            <p className='ml-7'>₦{currentEstimate}</p>
+          <p className=''>{item.name}</p>
+          <p className='ml-7'>₦{currentEstimate}</p>
         </div>
         <div className='control'>
-            <p className='control_button' onClick={handleDecrement}>-</p>
-            <p className='qty'>{item.quantity} qty</p>
-            <p className='control_button' onClick={handleIncrement}>+</p>
+          <p className='control_button' onClick={handleDecrement}>-</p>
+          <p className='qty'>{item.quantity} qty</p>
+          <p className='control_button' onClick={handleIncrement}>+</p>
         </div>
-            <button className='bg-yellow-600 p-3 rounded-md mt-3 text-white'>Buy on Jumia</button>
+        {item.link && (
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <button className='bg-yellow-600 p-3 rounded-md mt-3 text-white w-full'>Buy on Jumia</button>
+          </a>
+        )}
       </div>
       <div className='cart-item_del' onClick={handleDelete}>
         <p className='flex'> <FaTrash /> <span className='ml-1 hidden md:flex'>remove</span> </p>
