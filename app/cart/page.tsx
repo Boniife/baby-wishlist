@@ -104,10 +104,10 @@ const Cart: React.FC = () => {
           <h1 className=''>Contact Details</h1>
         </div>
         <h1 className='mt-5 text-gray-500 font-extrabold'>
-          Bank Account: Bank Of Nigeria
+          Bank Account: First Bank Of Nigeria <br />James Obioma Anyanwu <br /> 3121343852
         </h1>
         <h1 className='mt-5 text-gray-500 font-extrabold'>
-          House Address: Lagos Nigeria
+          House Address: No 15 Alhaji Alade Apatira street, <br />off Golden Gate Avenue, <br />isolo Lagos State
         </h1>
         <h1 className='mt-5 text-gray-500 font-extrabold'>
           Mobile Number: 07030703156
