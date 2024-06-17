@@ -91,7 +91,7 @@ const Cart: React.FC = () => {
         </div>
 
         <h1 className='mt-5 text-gray-500 font-extrabold'>
-          YOU CAN MAKE A TRANSFER OF <span className='text-black'>{calculateTotalPrice()} </span>to <span className='text-black'>opay 8105080543 </span>
+          YOU CAN MAKE A TRANSFER OF <span className='text-black'>{calculateTotalPrice()} </span>to <span className='text-black'>First Bank Of Nigeria: 3121343852 </span>
         </h1>
         <h1 className='mt-5 text-gray-500 font-extrabold'>
           You could Get the items from your local store and send it to our address below
