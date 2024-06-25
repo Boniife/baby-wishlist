@@ -61,7 +61,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
         </div>
         {item.link && (
           <a href={item.link} target="_blank" rel="noopener noreferrer">
-            <button className='bg-yellow-600 p-3 rounded-md mt-3 text-white w-full'>Buy on Jumia</button>
+            <button className='bg-yellow-600 p-3 rounded-md mt-3 text-white w-full'>Buy In Store</button>
           </a>
         )}
       </div>

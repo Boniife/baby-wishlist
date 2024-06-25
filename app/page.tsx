@@ -27,7 +27,7 @@ const ShoppingPage = () => {
 
       <div className="">
         <Hero />
-        <Dresses  />
+        {/* <Dresses  /> */}
         <Footwears  />
         <Accessories  />
         {/* <Toys  /> */}

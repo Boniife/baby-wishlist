@@ -72,7 +72,7 @@ const Cart: React.FC = () => {
       <div className=''>
         <h3 className='mt-5 text-black font-bold'>
           <span className=' font-extrabold'>NOTE:- </span>
-          You Can Click on the Jumia Button On Each item if you which to purchase any of the item from Jumia, and send it to our address provided below
+          You Can Click on the Buy in store Button On Each item if you which to purchase any of the item from store, and send it to our address provided below
         </h3>
       </div>
 
@@ -97,7 +97,7 @@ const Cart: React.FC = () => {
           You could Get the items from your local store and send it to our address below
         </h1>
         <h1 className='mt-5 text-gray-500 font-extrabold'>
-          You Can Click on the Jumia Button On Each item if you which to purchase any of the item from Jumia, and send it to our address provided below
+          You Can Click on the Buy in store Button On Each item if you which to purchase any of the item from store, and send it to our address provided below
         </h1>
 
         <div className='layout-head mt-5 font-extrabold'>

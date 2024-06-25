@@ -1,10 +1,10 @@
 export const ACCESSORIES_ITEMS = [
     {
-        id: 'New Born Feeding Bottle Set',
-        img: '/images/new feeding bottle.jpg',
-        name: 'New Born Feeding Bottle Set',
-        estimate: 8000,
-        link: 'https://www.jumia.com.ng/generic-new-born-feeding-bottle-set-111413081.html'
+        id: 'Baby Diaper Bag',
+        img: '/images/Baby Diaper Bag.jpg',
+        name: 'Baby Diaper Bag',
+        estimate: 17000,
+        link: 'https://www.jumia.com.ng/generic-waterproof-hospital-baby-diaper-bag-64246377.html'
     },
     {
         id: 'Vacuum Bottle Hot Water Flask 1000m',
@@ -14,31 +14,31 @@ export const ACCESSORIES_ITEMS = [
         link: 'https://www.jumia.com.ng/generic-vacuum-bottle-hot-water-flask-1000m-84288988.html'
     },
     {
-        id: 'Magnet Pacifier',
-        img: '/images/Magnet Pacifier.jpg',
-        name: 'Magnet Pacifier',
-        estimate: 2260,
-        link: 'https://www.jumia.com.ng/generic-1-pcs-reborn-doll-supplies-magnet-pacifier-reborns-baby-219711482.html'
+        id: 'n-1 musical play gym',
+        img: '/images/n-1 musical play gym.jpg',
+        name: 'n-1 musical play gym',
+        estimate: 38000,
+        link: 'https://www.instagram.com/reel/C7O2r5tCL0a/?igsh=aWY1bWNieng1NHNy'
     },
     {
-        id: 'BABY DIAPERS FOR NEW BORN ',
-        img: '/images/diapers.jpg',
-        name: 'BABY DIAPERS FOR NEW BORN ',
-        estimate: 8998,
-        link: 'https://www.jumia.com.ng/molfix-baby-diapers-for-new-born-size-150-pics-77922123.html'
+        id: 'Baby towel ',
+        img: '/images/Baby towel.jpg',
+        name: 'Baby towel ',
+        estimate: 8000,
+        link: 'https://www.instagram.com/reel/C6yRSQ0sYrp/?igsh=MTVyODRjeHVrZW5wcg%3D%3D'
     },
     {
-        id: 'Infantino 4-in-1 Convertible Baby Carrier',
-        img: '/images/convert carrier.jpg',
-        name: 'Infantino 4-in-1 Convertible Baby Carrier',
-        estimate: 24900,
-        link: 'https://www.jumia.com.ng/generic-infantino-4-in-1-convertible-baby-carrier-3.6-14.5kgs-310977635.html'
+        id: 'Tommee Tippee Mini Blend Baby Food Blender',
+        img: '/images/Tommee Tippee Mini Blend Baby Food Blender.jpg',
+        name: 'Tommee Tippee Mini Blend Baby Food Blender',
+        estimate: 40000,
+        link: 'https://www.instagram.com/p/C5_XJ24ohY3/?igsh=Y3MwZ2V0MTU5b2ky'
     },
     {
-        id: 'Baby Multi-color & Mixed Bibs',
-        img: '/images/Baby Multi-color & Mixed Bibs.jpg',
-        name: 'Baby Multi-color & Mixed Bibs',
-        estimate: 6000,
-        link: 'https://www.jumia.com.ng/fashion-baby-multi-color-mixed-bibs-set-of-5-133913840.html'
+        id: 'Baby silicone weaning set',
+        img: '/images/Baby silicone weaning set.jpg',
+        name: 'Baby silicone weaning set',
+        estimate: 16500,
+        link: 'https://www.instagram.com/p/C61VNfJo4T9/?igsh=czl3aGJqdWdqZnhu'
     },
 ]

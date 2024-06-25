@@ -73,7 +73,7 @@ const Navbar = () => {
           className="logo-image"
         />
         <div className={`sidebar ${showSidebar ? 'active' : ''}`}>
-          <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p>
+          {/* <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p> */}
           <p className='list2' onClick={() => scrollToSection('footwears-section')}>Footwears</p>
           <p className='list1' onClick={() => scrollToSection('accessories-section')}>Accessories</p>
           {/* <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p> */}
@@ -93,7 +93,7 @@ const Navbar = () => {
             </div>
             
             <div className='wrapper_text-wrap cursor-pointer'>
-              <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p>
+              {/* <p className='list1' onClick={() => scrollToSection('dresses-section')}>Dresses</p> */}
               <p className='list2' onClick={() => scrollToSection('footwears-section')}>Footwears</p>
               <p className='list1' onClick={() => scrollToSection('accessories-section')}>Accessories</p>
               {/* <p className='list2' onClick={() => scrollToSection('toys-section')}>Toys</p> */}
